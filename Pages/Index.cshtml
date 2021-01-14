@@ -1,4 +1,5 @@
 ﻿@page
+@using Entities
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,3 +9,13 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@foreach (Airport airport in Model.airports)
+{
+    <hr />
+    <div class="text-center">
+        <h1 class="display-5">@airport.airport</h1>
+        <p>This airport is in @airport.country and identified by iata code @airport.iata_code</p>
+    </div>
+}
+
