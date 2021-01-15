@@ -28,7 +28,7 @@ namespace aspnetcore_webapp.Pages
         private IList<Airport> GetAirports()
         {
             IList<Airport> airports = new List<Airport>();
-            var connString = "Host=localhost;Username=postgres;Password=newton243;Database=postgres";
+            var connString = Environment.GetEnvironmentVariable("primebird_connectionstring");
 
             using (var conn = new NpgsqlConnection(connString))
             {
